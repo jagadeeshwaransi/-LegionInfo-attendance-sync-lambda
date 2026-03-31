@@ -29,7 +29,7 @@ async function processAllDatabases() {
             );
 
             await updateJob(job.id, {
-                status: "completed",
+                status: result.status,
                 rows_affected: result.count,
                 last_log_id: result.lastLogId,
                 message: result.messages && result.messages.length > 0 ? result.messages.join(" | ") : null,
